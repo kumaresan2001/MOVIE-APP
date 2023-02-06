@@ -1,0 +1,74 @@
+.movie-container{
+    width: 340px;
+    height: min-content;
+
+}
+.movie-poster{
+    height: 640px;
+    width: 100%;
+    object-fit: cover;
+}
+.movie-specs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.movie-name{
+    font-size: 24px;
+    margin: 0;
+}
+.movie-rating{
+    font-size: 28px;
+}
+.movie-summry{
+    margin: 10px;
+}
+.movie-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px,1fr));
+    gap: 16px;
+    justify-items: center;
+}
+.add-movie-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 10px auto;
+
+}
+.game-box{
+    border: 1px solid black;
+    font-size: 160px;
+    height: 160px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-box:hover{
+    background: hsl(0deg 0% 0% /6%);
+}
+.board{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: min-content;
+    margin: 20px auto;
+
+}
+.tic
+{
+    text-align: center;
+}
+.movie-detail-container{
+    max-width: 750px;
+}
+body{
+    margin: 0px;
+}
+.dark-mode{
+    display: flex;
+    align-items: center;
+     justify-content: space-between;
+}
