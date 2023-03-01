@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import { useState, useEffect } from "react";
+import { API } from "./global";
 
 export function MovieDetails() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ export function MovieDetails() {
     color: movie.rating > 8.5 ? "green" : "crimson",
   };
   useEffect(() => {
-    fetch(`https://63d75fcb5dbd723244249fe7.mockapi.io/movie/${id}`)
+    fetch(`${API}/movie/${id}`)
       .then((data) => data.json())
       .then((mvs) => setMovie(mvs));
   }, [id]);

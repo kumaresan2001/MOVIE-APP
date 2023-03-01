@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { API } from "./global";
 export function EditMovie() {
   const { id } = useParams();
   // const movie = movielist[id];
@@ -13,7 +14,7 @@ export function EditMovie() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    fetch(`https://63d75fcb5dbd723244249fe7.mockapi.io/movie/${id}`)
+    fetch(`${API}/movie/${id}`)
       .then((data) => data.json())
       .then((mvs) => setMovie(mvs));
   }, [id]);
@@ -45,16 +46,13 @@ function EditMovieForm({ movie }) {
     });
   const Navigate = useNavigate();
   const updataMovie = async (newMovie) => {
-    await fetch(
-      `https://63d75fcb5dbd723244249fe7.mockapi.io/movie/${movie.id}`,
-      {
-        method: "PUT",
-        body: JSON.stringify(newMovie),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    await fetch(`${API}/movie/${movie._id}`, {
+      method: "PUT",
+      body: JSON.stringify(newMovie),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     Navigate("/movielist");
   };
   return (
